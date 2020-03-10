@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Image Classification App</title>
+ <style>
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+h1 {
+  color:#008CBA;
+}
+<!--
+div.pneumonia{ 
+        text-decoration: underline;
+        padding-right: 200px;                   
+            } 
+-->
+</style>
+</head>
+<body bgcolor = "#E0E3E5">
+ <h1><center><u>Radiological Image Classification</u></center></h1>
+ <h2><u>Body Part Segment Detection </u></h2>
+ <p><bold>Upload your Radiological image with different body parts: </bold></p> 
+ <form action = "/results_for_segment" method ='POST' enctype=multipart/form-data>
+ <input type="file" name="file" >
+ <input type="submit"  value="upload" >    
+ <h3><u>Results</u></h3> 
+ <img src="{{url_for('static',filename = image)}}" align="middle" style="width:150px"/>
+ <p>Body Part: {{prediction_text}}</p>
+ <p>Accuracy: {{prediction_acc}}</p>
+ </form>
+
+<!--
+ <div class = "pneumonia"> <h2>Pneumonia Detection using chest X-ray<h2></div>
+--> 
+</body>
+</html>
+
+

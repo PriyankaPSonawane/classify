@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Classification App</title>
+</head>
+<body>
+ <h2>Prediction</h2>
+<table>
+{% for key, value in final_prediction.items() %}
+   <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

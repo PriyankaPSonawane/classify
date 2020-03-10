@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Image Classification App</title>
+ <style>
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+h1 {
+  color:#008CBA;
+}
+</style>
+</head>
+<body bgcolor = "">
+ <h1><center><u>Radiological Image Classification</u></center></h1>
+ <h2><u>Brain Tumor Detection </u></h2>
+ <p><bold>Upload your Brain CT for Tumor detection: </bold></p> 
+ <form action = "results_for_t" method ='POST' enctype=multipart/form-data>
+ <input type="file" name="file" >
+ <input type="submit"  value="upload" >    
+ <h3><u>Results</u></h3> 
+ <img src="{{url_for('static',filename = image2)}}" align="middle" style="width:150px"/>
+ <p>Body Part: {{prediction_text}}</p>
+ <p>Accuracy: {{prediction_acc}}</p>
+ </form>
+
+</body>
+</html>
+
+
